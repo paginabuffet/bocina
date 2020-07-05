@@ -13,7 +13,7 @@ self.addEventListener('install', function(e) {
        '/?homescreen=1',
        '/styles/main.css',
        '/scripts/main.min.js',
-       '/sounds/airhorn.mp3'
+       '/sounds/airhorn.mp3',
      ]);
    })
  );
