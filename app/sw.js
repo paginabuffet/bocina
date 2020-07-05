@@ -1,7 +1,7 @@
 
 // Necesitamos usar Polyfill porque todavía no todos los navegadores 
 // son compatibles con la API de caché
-importScripts('/cache-polyfill.js');
+importScripts('cache-polyfill.js');
 
 
 self.addEventListener('install', function(e) {
