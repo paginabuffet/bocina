@@ -18,6 +18,10 @@ self.addEventListener('install', function(e) {
  );
 });
 
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
+});
+
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open('airhorner')
