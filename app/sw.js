@@ -15,9 +15,9 @@ self.addEventListener('install', function(e) {
        'scripts/main.min.js',
        'sounds/airhorn.mp3'
      ]);
-    self.skipWaiting();
    })
  );
+ self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
