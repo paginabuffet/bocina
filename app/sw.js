@@ -1,7 +1,8 @@
-// Necesitamos usar Polyfill porque todavía no todos los navegadores 
-// son compatibles con la API de caché
+/* Necesitamos usar Polyfill porque todavía no todos los navegadores 
+ * son compatibles con la API de caché
+ */ 
+ 
 importScripts('cache-polyfill.js');
-
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
@@ -14,6 +15,7 @@ self.addEventListener('install', function(e) {
        'scripts/main.min.js',
        'sounds/airhorn.mp3'
      ]);
+
    })
  );
 });
