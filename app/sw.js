@@ -26,11 +26,11 @@ self.addEventListener('install', function(e) {
 */
 
 self.addEventListener('fetch', event => {
-	evt.respondWith(
+	event.respondWith(
 		caches.open('airhorner').then((cache) => {
-		  return cache.match(evt.request)
+		  return cache.match(event.request)
 			  .then((response) => {
-				return response || fetch(evt.request);
+				return response || fetch(event.request);
 			  });
 		})
 	);
