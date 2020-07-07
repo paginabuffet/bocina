@@ -4,9 +4,11 @@
  
 importScripts('cache-polyfill.js');
 
+const cacheName = "airhorner";
+
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('airhorner').then(function(cache) {
+   caches.open(cacheName).then(function(cache) {
      return cache.addAll([
        'index.html',
        'index.html?homescreen=1',
@@ -26,12 +28,12 @@ self.addEventListener('install', function(e) {
 */
 
 self.addEventListener('fetch', event => {
-	event.respondWith(
-		caches.open('airhorner').then((cache) => {
-		  return cache.match(event.request)
-			  .then((response) => {
-				return response || fetch(event.request);
-			  });
-		})
-	);
+  event.respondWith(
+    caches.open(cacheName)
+      .then(cache => cache.match(event.request, {ignoreSearch: true}))
+      .then(response => {
+      return response || fetch(event.request);
+    })
+  );
 });
+
